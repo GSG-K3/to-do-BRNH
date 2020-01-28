@@ -3,11 +3,9 @@
 // For part one we expect you to use tdd
 // var todo_list= document.getElementById('list');
 var todoFunctions = {
-    // todoFunctions.generateId() will give you a unique id
     // You do not need to understand the implementation of this function.
     generateId: (function() {
       var idCounter = 0;
-  
       function incrementCounter() {
         return (idCounter += 1);
       }
@@ -24,10 +22,21 @@ var todoFunctions = {
     },
     
     addTodo: function(todos, newTodo) {
+
       // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
       // returns a new array, it should contain todos with the newTodo added to the end.
       // add an id to the newTodo. You can use the generateId function to create an id.
       // hint: array.concat
+    
+      let newArr = this.cloneArrayOfObjects(todos); 
+      let listItem = {
+        id: this.generateId(),
+        description: newTodo.description,
+        done: false
+      }
+
+       newArr.push(listItem); 
+      return newArr;
     },
     deleteTodo: function(todos, idToDelete) {
       // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
@@ -55,6 +64,10 @@ var todoFunctions = {
       // sortFunction will have same signature as the sort function in array.sort
       // hint: array.slice, array.sort
     },
+
+    helloWorld: function (){
+      console.log("Hello World");
+    }
   };
   
   
@@ -62,6 +75,11 @@ var todoFunctions = {
   // The answer has something to do with needing to run code both in the browser and in Node.js
   // See this article for more details: 
   // http://www.matteoagosti.com/blog/2013/02/24/writing-javascript-modules-for-both-browser-and-node/
+
   if (typeof module !== 'undefined') {
     module.exports = todoFunctions;
   }
+
+
+  // todoFunctions.addTodo([1], "a");
+
