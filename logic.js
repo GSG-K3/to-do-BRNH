@@ -1,6 +1,7 @@
 // Part 1. Fill in any missing parts of the todoFunction object!
 // you can access these on todo.todoFunctions
 // For part one we expect you to use tdd
+// var todo_list= document.getElementById('list');
 var todoFunctions = {
     // You do not need to understand the implementation of this function.
     generateId: (function() {
@@ -41,6 +42,15 @@ var todoFunctions = {
       // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
       // return a new array, this should not contain any todo with an id of idToDelete
       // hint: array.filter
+        var newArray=this.cloneArrayOfObjects(todos);
+        if(newArray.length !== 0 || newArray !== null){
+        var newArray1= newArray.filter(task=> {
+            return task.id != idToDelete;
+        });
+        todo_list=this.cloneArrayOfObjects(newArray1);
+        return todo_list;
+        }
+        else    return alert('You donot have a task to delete');
     },
     markTodo: function(todos, idToMark) {
       // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
