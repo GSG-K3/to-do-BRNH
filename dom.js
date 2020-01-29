@@ -21,6 +21,7 @@
   
       // this adds the delete button
       var deleteButtonNode = document.createElement('button');
+      deleteButtonNode.className="deletebutton";
       deleteButtonNode.addEventListener('click', function(event) {
         var newState = todoFunctions.deleteTodo(state, todo.id);
         update(newState);
@@ -30,7 +31,7 @@
       // add markTodo button
   
       // add classes for css
-  
+      
       return todoNode;
     };
   

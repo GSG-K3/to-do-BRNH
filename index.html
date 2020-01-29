@@ -6,14 +6,19 @@
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-    <div id = "todo-container">
-        <ul id='list'>
-        </ul>
-    </div>
-    <form id="add-todo">
-      <input type="text" id="description" name="description" value="">
-      <input type="submit" name="" value="Submit">
+    <header>
+      <img class= "icon" src="./img/icons8-checklist-50.png">
+      <h1>TO DO</h1>
+    </header>
+    
+    <form id="add-todo" class="add-todo-style">
+      <input type="text" class="description-style" id="description" name="description" value="">
+      <input type="submit" name="" class="addbutton" value="ADD">
     </form>
+    <div id = "todo-container">
+      <ul id='list'>
+      </ul>
+  </div>
   </body>
   <script type="text/javascript" src = "./logic.js"></script>
   <script type="text/javascript" src = "./dom.js"></script>

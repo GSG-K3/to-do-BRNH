@@ -1,0 +1,58 @@
+body{
+   margin: 0;
+   padding: 0;
+
+}
+header{
+    background-color: rgba(247, 113, 64, 0.76);
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+.icon{    
+ width: 100px;
+ height: 100px;  
+}
+
+.add-todo-style{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0 20px 0;
+}
+.description-style{
+    width: 400px;
+    height: 30px;
+    border: 2px solid rgba(247, 113, 64, 0.76);
+    border-radius: 4%;
+    margin: 0 20px 0 20px;
+    padding: 5px;
+    font-size: 20px;
+}
+.addbutton{
+    background-color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid  rgba(247, 113, 64, 0.76);
+}
+.deletebutton{
+    background-color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid  rgba(247, 113, 64, 0.76);
+    width: 60px;
+    height: 20px;
+    content: "Delete";
+}
+ul{
+    list-style: none;
+    
+}
