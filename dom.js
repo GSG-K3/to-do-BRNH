@@ -22,7 +22,7 @@
 
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
-    deleteButtonNode.innerHTML = ""
+    deleteButtonNode.innerHTML = "delete"
     deleteButtonNode.classList.add("deletebutton")
     deleteButtonNode.addEventListener('click', function(event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
@@ -34,6 +34,9 @@
       // this adds the mark button
      let markButtonNode = document.createElement('button');
      markButtonNode.classList.add("markbutton")
+     markButtonNode.innerHTML = "mark"
+
+
      markButtonNode.addEventListener('click', function(event) {
        var newState = todoFunctions.markTodo(state, todo.id);
        update(newState);
