@@ -92,7 +92,7 @@ var test_arr=[{'id':0,'description': 'sport', 'done':false},{'id':1,'description
 test('Delete task test', function(t){
     t.equal((logic["deleteTodo"](test_arr, 0)).length,test_arr.length-1,'To-do list length should dectrement by 1');
     t.equal((logic["deleteTodo"](test_arr, 2)).length,test_arr.length-1,'To-do list length should dectrement by 1');
-    
+
     t.end();
 });
 
