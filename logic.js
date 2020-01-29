@@ -1,85 +1,94 @@
-// Part 1. Fill in any missing parts of the todoFunction object!
-// you can access these on todo.todoFunctions
-// For part one we expect you to use tdd
-// var todo_list= document.getElementById('list');
+
 var todoFunctions = {
-    // You do not need to understand the implementation of this function.
-    generateId: (function() {
-      var idCounter = 0;
-      function incrementCounter() {
-        return (idCounter += 1);
-      }
-  
-      return incrementCounter;
-    })(),
-    
-    //cloneArrayOfObjects will create a copy of the todos array 
-    //changes to the new array don't affect the original
-    cloneArrayOfObjects: function(todos) {
-      return todos.map(function(todo){
-        return JSON.parse(JSON.stringify(todo));
-      });
-    },
-    
-    addTodo: function(todos, newTodo) {
-
-      // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
-      // returns a new array, it should contain todos with the newTodo added to the end.
-      // add an id to the newTodo. You can use the generateId function to create an id.
-      // hint: array.concat
-    
-      let newArr = this.cloneArrayOfObjects(todos); 
-      let listItem = {
-        id: this.generateId(),
-        description: newTodo.description,
-        done: false
-      }
-
-       newArr.push(listItem); 
-      return newArr;
-    },
-    deleteTodo: function(todos, idToDelete) {
-      // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
-      // return a new array, this should not contain any todo with an id of idToDelete
-      // hint: array.filter
-        var newArray=this.cloneArrayOfObjects(todos);
-        if(newArray.length !== 0 || newArray !== null){
-        var newArray1= newArray.filter(task=> {
-            return task.id != idToDelete;
-        });
-        todo_list=this.cloneArrayOfObjects(newArray1);
-        return todo_list;
-        }
-        else    return alert('You donot have a task to delete');
-    },
-    markTodo: function(todos, idToMark) {
-      // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
-      // in the new todo array, all elements will remain unchanged except the one with id: idToMark
-      // this element will have its done value toggled
-      // hint: array.map
-    },
-    sortTodos: function(todos, sortFunction) {
-      // stretch goal! Do this last
-      // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
-      // sortFunction will have same signature as the sort function in array.sort
-      // hint: array.slice, array.sort
-    },
-
-    helloWorld: function (){
-      console.log("Hello World");
+  // generate Id automaticly
+  generateId: (function () {
+    var idCounter = 0;
+    function incrementCounter() {
+      return (idCounter += 1);
     }
-  };
-  
-  
-  // Why is this if statement necessary?
-  // The answer has something to do with needing to run code both in the browser and in Node.js
-  // See this article for more details: 
-  // http://www.matteoagosti.com/blog/2013/02/24/writing-javascript-modules-for-both-browser-and-node/
 
-  if (typeof module !== 'undefined') {
-    module.exports = todoFunctions;
+    return incrementCounter;
+  })(),
+
+  //cloneArrayOfObjects will create a copy of the todos array 
+  cloneArrayOfObjects: function (todos) {
+    return todos.map(function (todo) {
+      return JSON.parse(JSON.stringify(todo));
+    });
+  },
+
+  //Add To-Do
+  addTodo: function (todos, newTodo) {
+    if (todos.constructor != Array || newTodo.constructor != Object) {
+      return 'the first argument should be array'
+    }
+
+    let newArr = this.cloneArrayOfObjects(todos);
+    let listItem = {
+      id: this.generateId(),
+      description: newTodo.description,
+      done: false
+    }
+
+    newArr.push(listItem);
+    return newArr;
+  },
+
+  //Delete To-Do
+  deleteTodo: function (todos, idToDelete) {
+
+    let newArray = this.cloneArrayOfObjects(todos);
+
+    if (newArray.length !== 0 || newArray !== null) {
+      var newArray1 = newArray.filter(task => {
+        return task.id != idToDelete;
+      });
+
+      return newArray1;
+
+    }
+    else return alert('You do not have a task to delete');
+  },
+
+  //Mark To-Do
+
+  markTodo: function (todos, idToMark) {
+    if (todos.constructor != Array || idToMark.constructor != Number) {
+      return 'the first argument should be array and the second argument should be number'
+    }
+    if (todos.length == 0) {
+      return 'you should enter a task first'
+    }
+
+    let newArr = this.cloneArrayOfObjects(todos);
+    let markedArray = newArr.map(task => {
+      if (task.id == idToMark) {
+        task.done = !task.done;
+      }
+      return task;
+    });
+
+    return markedArray;
+
+  },
+
+  sortTodos: function (todos, sortFunction) {
+    // stretch goal! Do this last
+    // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
+    // sortFunction will have same signature as the sort function in array.sort
+    // hint: array.slice, array.sort
   }
+};
 
 
-  // todoFunctions.addTodo([1], "a");
+// Why is this if statement necessary?
+// The answer has something to do with needing to run code both in the browser and in Node.js
+// See this article for more details: 
+// http://www.matteoagosti.com/blog/2013/02/24/writing-javascript-modules-for-both-browser-and-node/
+
+if (typeof module !== 'undefined') {
+  module.exports = todoFunctions;
+}
+
+
 
