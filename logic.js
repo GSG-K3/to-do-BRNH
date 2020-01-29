@@ -37,6 +37,13 @@ var todoFunctions = {
   //Delete To-Do
   deleteTodo: function (todos, idToDelete) {
 
+    if (todos.constructor != Array || idToDelete.constructor != Number) {
+      return 'the first argument should be array and the second argument should be number'
+    }
+    if (todos.length == 0) {
+      return 'you should enter a task first'
+    }
+
     let newArray = this.cloneArrayOfObjects(todos);
 
     if (newArray.length !== 0 || newArray !== null) {
