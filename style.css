@@ -64,7 +64,7 @@ header{
     width: 40px;
     height: 30px;
     background-color: white;
-    font-size: 20px;
+    color: transparent;
     font-weight: bold;
     margin: 3px;
     border:none;
@@ -76,7 +76,7 @@ header{
     width: 40px;
     height: 30px;
     background-color: white;
-    font-size: 20px;
+    color: transparent;
     font-weight: bold;
     margin: 3px;
     border:none;
@@ -105,4 +105,8 @@ ul{
     padding: 10px 5px 5px;
     margin: 5px;
     font-size: 20px;
+}
+
+label{
+    color: white;
 }
