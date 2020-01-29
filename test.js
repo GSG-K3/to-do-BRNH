@@ -92,7 +92,8 @@ var test_arr=[{'id':0,'description': 'sport', 'done':false},{'id':1,'description
 test('Delete task test', function(t){
     t.equal((logic["deleteTodo"](test_arr, 0)).length,test_arr.length-1,'To-do list length should dectrement by 1');
     t.equal((logic["deleteTodo"](test_arr, 2)).length,test_arr.length-1,'To-do list length should dectrement by 1');
-
+    t.deepEqual ( logic.deleteTodo("string", 1), 'the first argument should be array and the second argument should be number', "if the input arguments are true")
+    t.deepEqual ( logic.deleteTodo(test_arr, "str"), 'the first argument should be array and the second argument should be number', "if the input arguments are true")
     t.end();
 });
 
