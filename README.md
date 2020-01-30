@@ -18,7 +18,7 @@ We worked in pairs in this way: <br>
 
 -Rahaf and Nidaa worked on the add & mark functions and the testing part.
 
-At the end we worked all together on the desine and queries.
+At the end we worked all together on the design and queries.
 
-To viste the kickass website click on the link :stuck_out_tongue_winking_eye::
+To visit the kickass website click on the link :stuck_out_tongue_winking_eye::
 https://gsg-k3.github.io/to-do-BRNH/
