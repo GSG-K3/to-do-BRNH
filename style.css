@@ -1,36 +1,31 @@
-
 body,html{
    margin: 0;
    padding: 0;
    text-align: center;
-  
+   font-family: 'Zhi Mang Xing', 'cursive';
+
 }
 header{
     background-color: rgba(247, 113, 64, 0.76);
-    font-size: 45px;
-    margin: 0;
-    padding: 0;
+    font-size: 50px;
     font-family: 'Zhi Mang Xing', 'cursive';
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100vw;
-    
+    padding: 40px 0;
+    width: 100%;
+    margin: 0 0 10px 0 ;    
 }
 
-.icon{    
+.empty-img img {
+    width: 150px;
+    margin-top: 50px;
+
+}
+/* .icon{    
  width: 80px;
  height: 80px;
  margin: 60px 30px; 
 
-}
+} */
 
-.add-todo-style{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 20px 0 20px 0;
-}
 .description-style{
     width: 340px;
     height: 30px;
@@ -39,8 +34,11 @@ header{
     padding: 5px;
     font-size: 20px;
     outline: none;
-    font-family: 'Times New Roman', Times, serif;
+    
+}
 
+.text{
+    font-size: 20px;
 }
 .addbutton{
     background-color: white;
@@ -49,7 +47,27 @@ header{
     border: 2px solid  rgba(247, 113, 64, 0.76);
     outline: none;
     border-radius: 10px;
- 
+    font-family: 'Zhi Mang Xing', 'cursive';
+    padding: 10px 20px;
+    cursor: pointer;
+
+}
+
+.sort-button{
+    background-color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid  rgba(247, 113, 64, 0.76);
+    outline: none;
+    border-radius: 10px;
+    font-family: 'Zhi Mang Xing', 'cursive';
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.addbutton:hover, .sort-button:hover{
+    background-color: rgba(247, 113, 64, 0.712);
+    border: none
 }
 
 .deletebutton{
@@ -63,6 +81,7 @@ header{
     outline: none;
     background: url(./img/del.png) no-repeat ;
     cursor: pointer;
+    
 }
 .markbutton{
     width: 40px;
@@ -82,6 +101,7 @@ ul{
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0;
 }
 .mark{
     text-decoration: line-through;
@@ -93,8 +113,8 @@ ul{
     flex-direction: row;
     justify-content: space-between;
     width: 450px;
-    border: 2px solid rgba(247, 113, 64, 0.76);
-    padding: 10px 5px 5px;
+    border: 1px solid rgba(247, 113, 64, 0.76);
+    padding: 10px 5px 5px 10px;
     margin: 5px 0;
     font-size: 20px;
 }
@@ -105,20 +125,19 @@ label{
 
 @media only screen  and (max-width: 578px){
     header{
-        font-size: 30px;
+        font-size: 45px;
     }
-    .icon{    
-        width: 60px;
-        height: 60px;
-        margin: 40px 30px; 
-       }
        .list-style{
         width: 250px;
         
        }
 
-       .description-style{
-           width: 200px;
-       }
+       .add-todo-style{
+          width: 100%;
+     }
+     .description-style{
+         width: 200px;
+     }
+
     
 }
