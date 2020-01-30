@@ -20,8 +20,9 @@ var todoFunctions = {
   //Add To-Do
   addTodo: function (todos, newTodo) {
     if (todos.constructor != Array || newTodo.constructor != Object) {
-      return 'the first argument should be array'
+      return 'the first argument should be array and the second argument should be object'
     }
+
 
     let newArr = this.cloneArrayOfObjects(todos);
     let listItem = {
@@ -79,9 +80,9 @@ var todoFunctions = {
 
   },
 
+  //Sort To-Do
   sortTodos: function (todos) {
-    // stretch goal! Do this last
-    // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
+  
     let newArr = this.cloneArrayOfObjects(todos);
     newArr.sort( function (a,b) {
       let task1 = a.description.toLowerCase();
@@ -91,16 +92,10 @@ var todoFunctions = {
       return 0
     }) ;
     return newArr;
-    // sortFunction will have same signature as the sort function in array.sort
-    // hint: array.slice, array.sort
+
   }
 };
 
-
-// Why is this if statement necessary?
-// The answer has something to do with needing to run code both in the browser and in Node.js
-// See this article for more details: 
-// http://www.matteoagosti.com/blog/2013/02/24/writing-javascript-modules-for-both-browser-and-node/
 
 if (typeof module !== 'undefined') {
   module.exports = todoFunctions;

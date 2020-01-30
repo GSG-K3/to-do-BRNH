@@ -72,7 +72,7 @@ let marked2 = [{
     t.deepEqual( logic.addTodo([],{ description: 'play' }), ex1 , 'the array from AddFunction should be equal the expected Array');
     t.deepEqual( logic.addTodo(ex1,{ description: 'eat' }), ex2, 'the array from AddFunction should be equal the expected Array');
     t.deepEqual( logic.addTodo(ex2,{ description: 'die' }), ex3, 'the array from AddFunction should be equal the expected Array');
-    t.deepEqual ( logic.addTodo("string",{ description: 'die' }), 'the first argument should be array', "if the first argument is array");
+    t.deepEqual ( logic.addTodo("string",{ description: 'die' }), 'the first argument should be array and the second argument should be object', "if the first argument is array");
 
     t.end();
   } )

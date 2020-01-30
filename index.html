@@ -1,54 +1,41 @@
 <!DOCTYPE html>
-<html  lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>To-Do List</title>
-    <link rel="stylesheet" href="./style.css">
-    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <header>
-      <!-- <img class= "icon" src="./img/logo.png" alt="logo icon"> -->
-      To-Do List
-    </header>
+<html lang="en">
 
-      <form id="add-todo" class="add-todo-style">
-        <label for="description">Name</label><br>
-        <input type="text" class="description-style" id="description" required name="description" value="">
-        <label for="add-but">Add</label>
-        <input type="submit" name="whatever" id="add-but" class="addbutton" value="ADD">
-      </form>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css?family=Acme%7CZhi+Mang+Xing&display=swap" rel="stylesheet">
+</head>
 
-      <div id="empty-img" class="empty-img"> 
-        <img src="img/empty.jpg"   alt="image says you should enter a new task" />
-        <p class="text">ADD NEW TASK</p>
-      </div>
-     
-      
-      <div id = "todo-container">
-        <ul id='list'>
-        </ul>
-    </div>
-    <button class="sort-button" id="sort">Sort</button>
-   
-  </body>
-  <script type="text/javascript" src = "./logic.js"></script>
-  <script type="text/javascript" src = "./dom.js"></script>
+<body>
+  <header class="title">
+    To-Do List
+  </header>
 
-  </html>
+  <form id="add-todo" class="add-todo-style">
+    <label for="description" class="add-todo-style__description-label">Name</label><br>
+    <input type="text" class="add-todo-style__description-style" placeholder="Enter Task" id="description" required name="description" value="">
+    <label for="add-button" class="add-todo-style__add-label">Add</label>
+    <input type="submit" name="submit" id="add-button" class="add-todo-style__add-button" value="ADD">
+  </form>
 
+  <div id="empty-list-container" class="empty-list">
+    <img src="img/empty.jpg" alt="image says you should enter a new task" class="empty-list__img" />
+    <p class="empty-list__text" >ADD NEW TASK</p>
+  </div>
 
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-  </head>
-  <body>
-    
-  </body>
-  </html>
+  <div id="todo-container">
+    <ul id='list' class="todo-container__list">
+    </ul>
+  </div>
+
+  <button class="sort-button" id="sort">Sort</button>
+
+</body>
+<script type="text/javascript" src="./logic.js"></script>
+<script type="text/javascript" src="./dom.js"></script>
+
+</html>
