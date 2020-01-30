@@ -2,13 +2,13 @@ body,html{
    margin: 0;
    padding: 0;
    text-align: center;
-   font-family: 'Zhi Mang Xing', 'cursive';
+   font-family: 'Shadows Into Light', cursive;
 
 }
 header{
     background-color: rgba(247, 113, 64, 0.76);
     font-size: 50px;
-    font-family: 'Zhi Mang Xing', 'cursive';
+    font-family: 'Shadows Into Light', cursive;
     padding: 40px 0;
     width: 100%;
     margin: 0 0 10px 0 ;    
@@ -47,7 +47,7 @@ header{
     border: 2px solid  rgba(247, 113, 64, 0.76);
     outline: none;
     border-radius: 10px;
-    font-family: 'Zhi Mang Xing', 'cursive';
+    font-family: 'Shadows Into Light', cursive;
     padding: 10px 20px;
     cursor: pointer;
 
@@ -60,7 +60,7 @@ header{
     border: 2px solid  rgba(247, 113, 64, 0.76);
     outline: none;
     border-radius: 10px;
-    font-family: 'Zhi Mang Xing', 'cursive';
+    font-family: 'Shadows Into Light', cursive;
     padding: 10px 20px;
     cursor: pointer;
 }
@@ -108,17 +108,23 @@ ul{
     background-color:  rgba(247, 113, 64, 0.739);
 }
 .list-style{
-    border-radius: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 450px;
-    border: 1px solid rgba(247, 113, 64, 0.76);
+    border-left: 4px solid rgba(247, 113, 64, 0.76);
     padding: 10px 5px 5px 10px;
-    margin: 5px 0;
+    margin: 10px 0;
     font-size: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: transform 0.25s ease-out;
+    font-weight: bold;
 }
 
+.list-style:hover,
+.list-style:focus {
+  transform: scale(1.05);
+}
 label{
     color: white;
 }
