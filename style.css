@@ -2,32 +2,27 @@ body,html{
    margin: 0;
    padding: 0;
    text-align: center;
-   font-family: 'Zhi Mang Xing', 'cursive';
+   font-family: 'Acme', sans-serif;
 
 }
-header{
+.title{
     background-color: rgba(247, 113, 64, 0.76);
     font-size: 50px;
-    font-family: 'Zhi Mang Xing', 'cursive';
+    font-family: 'Acme', sans-serif;
     padding: 40px 0;
     width: 100%;
     margin: 0 0 10px 0 ;    
 }
 
-.empty-img img {
-    width: 150px;
-    margin-top: 50px;
-
+.add-todo-style{
+    width: 100%;
 }
-/* .icon{    
- width: 80px;
- height: 80px;
- margin: 60px 30px; 
+.add-todo-style__description-label, .add-todo-style__add-label{
+    color: white;   
+}
 
-} */
-
-.description-style{
-    width: 340px;
+.add-todo-style__description-style{
+    width: 300px;
     height: 30px;
     border: 2px solid rgba(247, 113, 64, 0.76);
     border-radius: 10px;
@@ -37,21 +32,29 @@ header{
     
 }
 
-.text{
-    font-size: 20px;
-}
-.addbutton{
+.add-todo-style__add-button{
     background-color: white;
     font-size: 20px;
     font-weight: bold;
     border: 2px solid  rgba(247, 113, 64, 0.76);
     outline: none;
     border-radius: 10px;
-    font-family: 'Zhi Mang Xing', 'cursive';
+    font-family: 'Acme', sans-serif;
     padding: 10px 20px;
     cursor: pointer;
 
 }
+
+.empty-list__img {
+    width: 150px;
+    margin-top: 50px;
+}
+
+.empty-list__text{
+    font-size: 20px;
+}
+
+
 
 .sort-button{
     background-color: white;
@@ -60,7 +63,7 @@ header{
     border: 2px solid  rgba(247, 113, 64, 0.76);
     outline: none;
     border-radius: 10px;
-    font-family: 'Zhi Mang Xing', 'cursive';
+    font-family: 'Acme', sans-serif;
     padding: 10px 20px;
     cursor: pointer;
 }
@@ -70,7 +73,35 @@ header{
     border: none
 }
 
-.deletebutton{
+.todo-container__list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+
+
+.todo-container__list-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 450px;
+    border-left: 4px solid rgba(247, 113, 64, 0.76);
+    padding: 10px 5px 5px 10px;
+    margin: 10px 0;
+    font-size: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: transform 0.25s ease-out;
+}
+
+.todo-container__list-item:hover,
+.todo-container__list-item:focus {
+  transform: scale(1.05);
+}
+
+
+.list-item__delete-button{
     width: 40px;
     height: 30px;
     background-color: white;
@@ -83,7 +114,8 @@ header{
     cursor: pointer;
     
 }
-.markbutton{
+
+.list-item__mark-button{
     width: 40px;
     height: 30px;
     background-color: white;
@@ -96,46 +128,24 @@ header{
     cursor: pointer;
 }
 
-ul{
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-}
+
+
 .mark{
     text-decoration: line-through;
     background-color:  rgba(247, 113, 64, 0.739);
 }
-.list-style{
-    border-radius: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 450px;
-    border: 1px solid rgba(247, 113, 64, 0.76);
-    padding: 10px 5px 5px 10px;
-    margin: 5px 0;
-    font-size: 20px;
-}
 
-label{
-    color: white;
-}
 
 @media only screen  and (max-width: 578px){
-    header{
+    .title{
         font-size: 45px;
     }
-       .list-style{
+       .todo-container__list-item{
         width: 250px;
-        
        }
-
-       .add-todo-style{
-          width: 100%;
-     }
-     .description-style{
+  
+ 
+      .add-todo-style__description-style{
          width: 200px;
      }
 
