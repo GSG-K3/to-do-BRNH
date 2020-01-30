@@ -11,20 +11,28 @@
   </head>
   <body>
     <header>
-      <img class= "icon" src="./img/logo.png" alt="logo icon">
-      <h1>TO DO</h1>
+      <!-- <img class= "icon" src="./img/logo.png" alt="logo icon"> -->
+      To-Do List
     </header>
 
       <form id="add-todo" class="add-todo-style">
-        <label for="description">Name</label>
+        <label for="description">Name</label><br>
         <input type="text" class="description-style" id="description" required name="description" value="">
         <label for="add-but">Add</label>
         <input type="submit" name="whatever" id="add-but" class="addbutton" value="ADD">
       </form>
+
+      <div id="empty-img" class="empty-img"> 
+        <img src="img/empty.jpg"   alt="image says you should enter a new task" />
+        <p class="text">ADD NEW TASK</p>
+      </div>
+     
+      
       <div id = "todo-container">
         <ul id='list'>
         </ul>
     </div>
+    <button class="sort-button" id="sort">Sort</button>
    
   </body>
   <script type="text/javascript" src = "./logic.js"></script>
